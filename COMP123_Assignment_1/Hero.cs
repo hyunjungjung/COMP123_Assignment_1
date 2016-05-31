@@ -9,7 +9,7 @@ using System.Threading.Tasks;
  * Student # : 300432364
  * Date Modified: May 31, 2016
  * Description: Hero class for Assignment 1
- * Version: 0.0.3 - Added constructor and private method _generateAbilities to Hero class
+ * Version: 0.0.4 - Added private methods _hitAttempt and _hitDamage.
  */
 namespace COMP123_Assignment_1
 {
@@ -89,13 +89,12 @@ namespace COMP123_Assignment_1
         // PRIVATE METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         /**
          * <summary>
-         * 
+         * This method generates random integers for _strength, _ speed and _health.
          * </summary>
          * 
          * @private
          * @method _generateAbilities
          * @returns {void}
-         * 
          */
 
         private void _generateAbilities()
@@ -107,5 +106,42 @@ namespace COMP123_Assignment_1
             _health = number.Next(1, 101);
 
         }
+        /**
+         * <summary>
+         * This method generates the 20% of hit chance.
+         * </summary>
+         * 
+         * @private
+         * @method _hitAttempt
+         * @returns {bool}
+         */
+        private bool _hitAttempt()
+        {
+
+            Random num = new Random();
+            if (num.Next(1, 6) == 1)
+            {
+                return true;
+            }
+            else { return false; }
+
+        }
+
+        /**
+         * <summary>
+         * This method calculates the amount of damage based on Hero _strength by a randomly generated number.
+         * </summary>
+         * 
+         * @private
+         * @method _hitDamage
+         * @returns {int} damage
+         */
+        private int _hitDamage()
+        {
+            Random num = new Random();
+            int damage = _strength * num.Next(1, 7);
+            return damage;
+        }
+
     }
 }

@@ -8,8 +8,7 @@ using System.Threading.Tasks;
  * Student # : 300432364
  * Date Modified: May 27, 2016
  * Description: Main method fror driver class Program for Assignment 1
- * Version: 0.0.2 - Added private instance variables 
- *                  and Public properties to Hero Class.
+ * Version: 0.0.2 - Added constructor and private method _generateAbilities to Hero class
  */
 namespace COMP123_Assignment_1
 { 

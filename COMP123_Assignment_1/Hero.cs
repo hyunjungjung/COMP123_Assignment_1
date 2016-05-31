@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 /*
  * Author: Joanne (Hyunjung) Jung
  * Student # : 300432364
- * Date Modified: May 27, 2016
+ * Date Modified: May 31, 2016
  * Description: Hero class for Assignment 1
- * Version: 0.0.2 - Added private instance variables 
- *                  and Public properties to Hero Class.
+ * Version: 0.0.3 - Added constructor and private method _generateAbilities to Hero class
  */
 namespace COMP123_Assignment_1
 {
@@ -78,6 +77,35 @@ namespace COMP123_Assignment_1
         {
             get { return this._name; }
             set { this._name = value; }
+        }
+
+        // CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        public Hero(string _name)
+        {
+            this.Name = _name;
+            this._generateAbilities();
+        }
+        // PRIVATE METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        /**
+         * <summary>
+         * 
+         * </summary>
+         * 
+         * @private
+         * @method _generateAbilities
+         * @returns {void}
+         * 
+         */
+
+        private void _generateAbilities()
+        {
+            
+            Random number = new Random();
+            _strength = number.Next(1, 101);
+            _speed = number.Next(1, 101);
+            _health = number.Next(1, 101);
+
         }
     }
 }

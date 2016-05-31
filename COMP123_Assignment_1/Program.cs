@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 /*
  * Author: Joanne (Hyunjung) Jung
  * Student # : 300432364
- * Date Modified: May 27, 2016
+ * Date Modified: May 31, 2016
  * Description: Main method fror driver class Program for Assignment 1
- * Version: 0.0.4 - Added private methods _hitAttempt and _hitDamage.
+ * Version: 0.0.5 - Added public methods Fight and Show, and implemented the Hero class 
+ * by creating a new hero object
  */
 namespace COMP123_Assignment_1
-{ 
+{
     /**
      * This class is the "driver" class for our Program
      * 
@@ -28,6 +29,9 @@ namespace COMP123_Assignment_1
         public static void Main(string[] args)
         {
             // create a new instance of the Hero Class
+            Hero Ken = new Hero("KEN");
+            Ken.Show();
+            Ken.Fight();
 
         }
     }

@@ -9,7 +9,8 @@ using System.Threading.Tasks;
  * Student # : 300432364
  * Date Modified: May 31, 2016
  * Description: Hero class for Assignment 1
- * Version: 0.0.4 - Added private methods _hitAttempt and _hitDamage.
+ * Version: 0.0.5 - Added public methods Fight and Show, and implemented the Hero class 
+ * by creating a new hero object
  */
 namespace COMP123_Assignment_1
 {
@@ -99,7 +100,7 @@ namespace COMP123_Assignment_1
 
         private void _generateAbilities()
         {
-            
+
             Random number = new Random();
             _strength = number.Next(1, 101);
             _speed = number.Next(1, 101);
@@ -124,7 +125,6 @@ namespace COMP123_Assignment_1
                 return true;
             }
             else { return false; }
-
         }
 
         /**
@@ -141,6 +141,51 @@ namespace COMP123_Assignment_1
             Random num = new Random();
             int damage = _strength * num.Next(1, 7);
             return damage;
+        }
+
+        // PUBLIC METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        /**
+         * <summary>
+         * This method outputs value from _hitDamage based on _hitAttempt condition.
+         * </summary>
+         * 
+         * @method Fight
+         * @returns {void}
+         */
+
+        public void Fight()
+        {
+            if (_hitAttempt())
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine();
+                Console.WriteLine("      Your hit damage is {0}!!!!        ", _hitDamage());
+                Console.ResetColor();
+            }
+            else
+            {
+                Console.WriteLine();
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("         Hey Hero! You missed!          ");
+                Console.ResetColor();
+            }
+            Console.WriteLine("==========================================");
+        }
+
+        /**
+         * <summary>
+         * This method outputs Strength, Speed and Health value for a hero.
+         * </summary>
+         * 
+         * @method Show
+         * @returns {void}
+         */
+        public void Show()
+        {
+            Console.WriteLine("==========================================");
+            Console.WriteLine("    Strength     Speed      Health     ");
+            Console.WriteLine("      {0}           {1}        {2}", _strength, _speed, _health);
+
         }
 
     }
